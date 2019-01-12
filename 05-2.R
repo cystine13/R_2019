@@ -16,3 +16,4 @@ df_mpg <- as.data.frame(mpg)
 df_mpg <- rename(df_mpg, city=cty)
 df_mpg <- rename(df_mpg, highway=hwy)
 df_mpg
+

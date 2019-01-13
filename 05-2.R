@@ -1,5 +1,6 @@
 #05-2 변수명 바꾸기
 #install.packages("dplyr")
+rm(list = ls())
 library(dplyr)
 library(ggplot2)
 
@@ -12,8 +13,8 @@ df_raw
 df_new <- df_raw
 df_new <- rename(df_new, v2=var2)
 
-df_mpg <- as.data.frame(mpg)
+df_mpg <- as.data.frame(ggplot2::mpg)
 df_mpg <- rename(df_mpg, city=cty)
 df_mpg <- rename(df_mpg, highway=hwy)
-df_mpg
+head(df_mpg)
 

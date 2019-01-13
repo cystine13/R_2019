@@ -1,4 +1,5 @@
 #06-3 필요한 변수만 추출하기
+rm(list = ls())
 library(dplyr)
 exam <- read.csv("csv_exam.csv")
 
@@ -27,3 +28,12 @@ mpg_subset_suv <- mpg_subset %>%  filter(mpg_subset$class == "suv")
 mpg_subset_com <- mpg_subset %>%  filter(mpg_subset$class == "compact")
 mean(mpg_subset_suv$cty)
 mean(mpg_subset_com$cty)
+
+mpg_suv <- mpg %>%
+  select(class, cty) %>% 
+  filter(class == "suv")
+mean(mpg_suv$cty)
+mpg_compact <- mpg %>%
+  select(class, cty) %>% 
+  filter(class == "compact")
+mean(mpg_compact$cty)

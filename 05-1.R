@@ -1,4 +1,5 @@
 #install.packages("readxl")
+rm(list = ls())
 library(readxl)
 
 exam <- read.csv("csv_exam.csv")

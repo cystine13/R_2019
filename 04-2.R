@@ -1,13 +1,15 @@
 # 04-2 데이터 프레임 만들기
+rm(list = ls())
 
 english <- c(90, 80, 60, 70)
 math <- c(50, 60, 10, 20)
 df_midterm <- data.frame(english, math)
 
-df_midterm <- data.frame(english <- c(90, 80, 60, 70),
-                         math <- c(50, 60, 10, 20),
-                         class <- c(1,1,2,2))
+df_midterm <- data.frame(english = c(90, 80, 60, 70),
+                         math = c(50, 60, 10, 20),
+                         class = c(1,1,2,2))
 
+df_midterm
 df_midterm[1,]
 df_midterm[,1]
 df_midterm[1:2,]
@@ -16,8 +18,9 @@ df_midterm$class
 head(df_midterm)
 
 # 기초통계
-mean(df_midterm[,1])
 mean(df_midterm$english)
+mean(df_midterm[,1])
+
 
 # test
 df_fruit <- data.frame(item <- c("사과", "딸기", "수박"),

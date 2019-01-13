@@ -1,4 +1,5 @@
 #06-2 조건에 맞는 데이터만 추출하기
+rm(list = ls())
 library(dplyr)
 exam <- read.csv("csv_exam.csv")
 

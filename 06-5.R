@@ -9,21 +9,18 @@ exam %>%
   head
 
 exam %>% 
-  mutate(total = math + english + science) %>% 
-  head
-
-exam %>% 
   mutate(total = math + english + science,
-         mean = (math + english + science)/3) %>% 
+         total_mean = (math + english + science)/3) %>% 
   head
 
 exam %>% 
-  mutate(test = ifelse(science >= 60, "pass", "fail")) %>% 
+  mutate(total_mean = (math + english + science)/3,
+         test = ifelse(total_mean >= 60, "pass", "fail")) %>% 
   head
 
 exam %>% 
   mutate(total = math + english + science) %>% 
-  arrange(total) %>% 
+  arrange(desc(total)) %>% 
   head
 
 # test
@@ -32,10 +29,10 @@ mpg %>% mutate(total=cty+hwy)
 # Q2
 mpg %>% 
   mutate(total=cty+hwy,
-         mean=(cty+hwy)/2)
+         total_mean=(cty+hwy)/2)
 # Q3, Q4
 mpg %>% 
   mutate(total=cty+hwy,
-         mean=(cty+hwy)/2) %>% 
-  arrange(desc(mean)) %>% 
+         total_mean=(cty+hwy)/2) %>% 
+  arrange(desc(total_mean)) %>% 
   head(3)

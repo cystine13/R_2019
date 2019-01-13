@@ -6,27 +6,27 @@ exam <- read.csv("csv_exam.csv")
 
 # 요약하기
 
-exam %>% summarise(mean_math = mean(math))
+exam %>% summarise(math_mean = mean(math))
+mean(exam$math)
 
 # 집단별로 요약하기
 
 exam %>% group_by(class) %>% 
-  summarise(mean_math = mean(math))
+  summarise(math_mean = mean(math))
 
 # 여러 통계량 집단별로 요약하기
 
 exam %>% group_by(class) %>% 
-  summarise(mean_math = mean(math),
-            sum_math = sum(math),
-            median_math = median(math),
+  summarise(math_mean = mean(math),
+            math_sum = sum(math),
+            math_median = median(math),
             n = n())
 
 # 집단*집단 통계량 요약하기
 
 mpg %>% 
   group_by(manufacturer, drv) %>% 
-  summarise(mean_cty = mean(cty)) %>% 
-  head(10)
+  summarise(cty_mean = mean(cty))
 
 # dplyr 조합하기
 mpg %>% 

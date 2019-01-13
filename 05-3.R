@@ -1,4 +1,5 @@
 #05-3 파생변수 만들기
+rm(list = ls())
 library(dplyr)
 library(ggplot2)
 
@@ -15,6 +16,7 @@ summary(mpg$total)
 hist(mpg$total)
 
 # 조건문
+?ifelse
 ifelse(mpg$total>=20,"pass","fail")
 mpg$test <- ifelse(mpg$total>=20,"pass","fail")
 table(mpg$test)

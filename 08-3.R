@@ -17,8 +17,8 @@ ggplot(data=df_mpg, aes(x=reorder(drv,-hwy_mean),y=hwy_mean)) +
 
 # 원자료로 막대 그래프 그리기
 # 질적 자료
-ggplot(data=mpg, aes(x=drv)) +
-  geom_bar()
+ggplot(data=mpg, aes(x=drv, fill=drv)) +
+  geom_bar() + scale_fill_brewer(palette = "Blues")
 
 # 양적 자료
 ggplot(data=mpg, aes(x=hwy)) +
@@ -58,6 +58,10 @@ mpg %>%
   arrange(desc(cty_mean)) %>% 
   head(5) %>% 
   ggplot(aes(x=reorder(manufacturer,-cty_mean),y=cty_mean)) +
-  geom_bar(stat="identity")
-
+  geom_bar(stat="identity") +
+  labs(x = "New x axis label",
+       y = "New y axis label",
+       title ="Add a title above the plot",
+       subtitle = "Add a subtitle below title",
+       caption = "Add a caption below plot")     
 

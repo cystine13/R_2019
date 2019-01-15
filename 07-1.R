@@ -31,6 +31,7 @@ sum(df$score, na.rm=T)
 
 exam <- read.csv("csv_exam.csv")
 exam[c(3,8,15),"math"] <- NA
+table(is.na(exam$math))
 exam %>% summarise(math_mean = mean(math))
 exam %>% summarise(math_mean = mean(math,na.rm=T))
 exam %>% summarise(math_mean = mean(math,na.rm=T),

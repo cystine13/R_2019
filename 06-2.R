@@ -11,6 +11,7 @@ exam %>% filter(math >= 50)
 
 # 2개이상의 조건
 exam %>% filter(class == 1 & math > 50)
+exam %>% filter(class == 1 | math > 50)
 exam %>% filter(math > 50 | english > 50)
 exam %>% filter(class == 1 | class == 2 | class == 3)
 exam %>% filter(class %in% c(1,2,3))

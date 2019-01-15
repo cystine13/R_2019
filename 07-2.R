@@ -32,6 +32,7 @@ mpg %>%
   group_by(drv) %>% 
   summarise(hwy_mean=mean(hwy,na.rm=T))
 
+str(boxplot(mpg$hwy))
 names(boxplot(mpg$hwy))
 boxplot(mpg$hwy)$stat
 boxplot(mpg$hwy)$n

@@ -16,6 +16,10 @@ exam %>%
   filter(class ==1) %>% 
   select(english)
 
+exam %>% 
+  select(english) %>% 
+  filter(class ==1)
+
 exam %>%
   select(id, math) %>% 
   head

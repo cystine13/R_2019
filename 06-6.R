@@ -22,6 +22,12 @@ exam %>% group_by(class) %>%
             math_median = median(math),
             n = n())
 
+exam %>% group_by(class) %>% 
+  summarise(mean(math),
+            sum(math),
+            median(math),
+            n())
+
 # 집단*집단 통계량 요약하기
 
 mpg %>% 

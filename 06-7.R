@@ -7,10 +7,11 @@ library(ggplot2)
 mid <- data.frame(id=c("1","2","3","4","5"),
                   midterm=c(60,80,70,90,85))
 # 기말고사 데이터 생성
-final <- data.frame(id=c("1","2","3","4","5"),
+final <- data.frame(id=c("1","2","3","4","6"),
                     final=c(70,83,65,95,80))
 # 
 total <- left_join(mid,final,by="id")
+str(mid)
 # 가로로 합치기(2)
 exam <- read.csv("csv_exam.csv")
 name <- data.frame(class=c(1,2,3,4,5),
@@ -19,9 +20,9 @@ exam_new <- left_join(exam, name, by = "class")
 
 # 세로로 합치기
 group_a <- data.frame(id=c("1","2","3","4","5"),
-                      test=c(60,80,70,90,85))
+                      test=c(60,80,70,90,85), stringsAsFactors = F)
 group_b <- data.frame(id=c("6","7","8","9","10"),
-                    test=c(70,83,65,95,80))
+                    test=c(70,83,65,95,80), stringsAsFactors = F)
 group_all <- bind_rows(group_a,group_b)
 
 # test

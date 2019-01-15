@@ -3,8 +3,8 @@ rm(list = ls())
 library(dplyr)
 library(ggplot2)
 
-df <- data.frame(var1 = c(4,3,8),
-                 var2 = c(2,6,1))
+df <- data.frame(var1 = c(90,80,60,70),
+                 var2 = c(50,60,100,20))
 
 df$sum <- df$var1 + df$var2
 df$mean <- (df$var1 + df$var2)/2
@@ -13,12 +13,15 @@ head(mpg)
 mpg$total <- (mpg$cty + mpg$hwy)/2
 
 summary(mpg$total)
-hist(mpg$total)
+mean(mpg$total)
+hist(mpg$total, main="Histogram of Total", xlab="Total", ylab="mileage (mile)")
+?hist
 
 # 조건문
-?ifelse
+
 ifelse(mpg$total>=20,"pass","fail")
 mpg$test <- ifelse(mpg$total>=20,"pass","fail")
+mpg
 table(mpg$test)
 qplot(mpg$test)
 

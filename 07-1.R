@@ -24,8 +24,10 @@ sum(df_nomiss$score)
 
 df_nomiss1 <- df %>% filter(!is.na(sex) & !is.na(score))
 df_nomiss2 <- na.omit(df)
+mean(df_nomiss1$score)
 
 # 함수의 결측치 제외 기능 이용하기
+?mean()
 mean(df$score, na.rm=T)
 sum(df$score, na.rm=T)
 
@@ -38,7 +40,7 @@ exam %>% summarise(math_mean = mean(math,na.rm=T),
                    math_sum = sum(math,na.rm=T),
                    math_median = median(math,na.rm=T))
 
-# 결측치 데체하기
+# 결측치 대체하기
 mean(exam$math, na.rm=T)
 exam$math <- ifelse(is.na(exam$math), 55, exam$math)
 table(is.na(exam$math))

@@ -41,6 +41,7 @@ boxplot(mpg$hwy)$out
 boxplot(mpg$hwy)$group
 boxplot(mpg$hwy)$names
 
+?boxplot
 # test
 mpg <- as.data.frame(ggplot2::mpg)
 mpg[c(10,14,58,93), "drv"] <- "k"

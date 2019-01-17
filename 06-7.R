@@ -17,11 +17,11 @@ total4 <- full_join(mid,final,by="id")
 
 # 가로로 합치기(1_test)
 # 중간고사 데이터 생성
-mid <- data.frame(id=c("1","2","3","4","5"),
-                  midterm=c(60,80,70,90,85), stringsAsFactors = F)
+mid <- data.frame(id=c("1","2","3","4"),
+                  midterm=c(60,80,70,90), stringsAsFactors = F)
 # 기말고사 데이터 생성
-final <- data.frame(id=c("1","2","3","4","6"),
-                    final=c(70,83,65,95,80), stringsAsFactors = F)
+final <- data.frame(id=c("1","2","5","6"),
+                    final=c(70,83,65,95), stringsAsFactors = F)
 # 
 total1 <- left_join(mid,final,by="id")
 total2 <- right_join(mid,final,by="id")
@@ -32,6 +32,16 @@ total1
 total2
 total3
 total4
+
+grade <- data.frame(id=c("1","2","3","4","5"),
+                  grade=c("A","A","B","C","B"), stringsAsFactors = F)
+
+# 기말고사 데이터 생성
+score <- data.frame(grade=c("A","B","C"),
+                    socre=c(4,3,2), stringsAsFactors = F)
+
+left_join(grade,score,by="grade")
+
 
 str(mid)
 # 가로로 합치기(2)
@@ -68,8 +78,7 @@ midwest %>%
 midwest_new <- midwest %>% 
                 mutate(ratio=(poptotal-popadults)/poptotal,
                        grade=ifelse(ratio>=0.4,"Large", ifelse(ratio>=0.3,"Middle","Small"))) %>% 
-                select(county,ratio,grade) %>% 
-                arrange(desc(ratio))
+                select(county,ratio,grade)
 table(midwest_new$grade)
 # 문제4
 midwest %>% 

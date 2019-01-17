@@ -24,3 +24,5 @@ ggplot(data=mpg_diff2, aes(x=fl,y=cty)) + geom_boxplot()
 
 t.test(data=mpg_diff2, cty~fl, var.equal=T)
 t.test(data=mpg_diff2, cty~fl)
+
+t.test(mpg$cty, mpg$hwy, paired = TRUE)

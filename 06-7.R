@@ -5,12 +5,34 @@ library(ggplot2)
 # 가로로 합치기(1)
 # 중간고사 데이터 생성
 mid <- data.frame(id=c("1","2","3","4","5"),
-                  midterm=c(60,80,70,90,85))
+                  midterm=c(60,80,70,90,85), stringsAsFactors = F)
+# 기말고사 데이터 생성
+final <- data.frame(id=c("1","2","3","4","5"),
+                    final=c(70,83,65,95,80), stringsAsFactors = F)
+# 
+total1 <- left_join(mid,final,by="id")
+total2 <- right_join(mid,final,by="id")
+total3 <- inner_join(mid,final,by="id")
+total4 <- full_join(mid,final,by="id")
+
+# 가로로 합치기(1_test)
+# 중간고사 데이터 생성
+mid <- data.frame(id=c("1","2","3","4","5"),
+                  midterm=c(60,80,70,90,85), stringsAsFactors = F)
 # 기말고사 데이터 생성
 final <- data.frame(id=c("1","2","3","4","6"),
-                    final=c(70,83,65,95,80))
+                    final=c(70,83,65,95,80), stringsAsFactors = F)
 # 
-total <- left_join(mid,final,by="id")
+total1 <- left_join(mid,final,by="id")
+total2 <- right_join(mid,final,by="id")
+total3 <- inner_join(mid,final,by="id")
+total4 <- full_join(mid,final,by="id")
+
+total1
+total2
+total3
+total4
+
 str(mid)
 # 가로로 합치기(2)
 exam <- read.csv("csv_exam.csv")
